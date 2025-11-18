@@ -91,18 +91,21 @@ export default function DashboardPage() {
             value={data.totalCalls}
             icon="📞"
             trend="+12%"
+            color="blue"
           />
           <StatsCard
             title="New Appointments"
             value={data.newPatients}
             icon="📅"
             trend="+8%"
+            color="green"
           />
           <StatsCard
             title="Revenue"
             value={`$${data.totalRevenue.toLocaleString()}`}
             icon="💰"
             trend="+15%"
+            color="purple"
           />
         </div>
 
@@ -113,7 +116,7 @@ export default function DashboardPage() {
 
         {/* Recent Calls List */}
         <div className="mb-8">
-          <ClientsList calls={data.calls} />
+          <ClientsList clients={data.calls} onRefresh={() => {}} />
         </div>
 
         {/* ROI Calculator */}
